@@ -3,6 +3,10 @@
 	The sum of these multiples is 23.
 	Find the sum of all the multiples of 3 or 5 below 1000.
 */
+/*
+	姓名：赵子豪
+	日期：2019年9月17日
+*/
 /*	1_sum_of_multiples_3_or_5.c	*/
 #include <stdio.h>
 
@@ -35,7 +39,7 @@ int * list(int * p, int n)
 	}
 	*(p+count) = '\0';
 
-	for (count = 0;*(p + count) ! = '\0'; count++)
+	for (count = 0; *(p + count) != '\0'; count++)
 	{
 		if (count != 0 && count % 10 == 0)
 			printf("\n");
