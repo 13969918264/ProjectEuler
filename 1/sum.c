@@ -3,7 +3,7 @@
 	The sum of these multiples is 23.
 	Find the sum of all the multiples of 3 or 5 below 1000.
 */
-/*	sum.c	*/
+/*	1_sum_of_multiples_3_or_5.c	*/
 #include <stdio.h>
 
 #define MAX_VALUE 1000
@@ -25,10 +25,28 @@ int main(void)
 
 int * list(int * p, int n)
 {
+	int i = 1;
+	int * pt;
 
+	pt = p;
+
+	for (i; i < n; i++)
+	{
+		if ((i % 3 == 0) || (i % 5) == 0)
+			*pt++ = i;
+	}
+
+	return p;
 }
 
 int sum(int * p, int n)
 {
+	int sum = 0;
+	int count = 0;
 
+	while (count <= n && (*p != 0 || *p != '\0'))
+	{
+		sum += *(p + count);
+		count++;
+	}
 }
