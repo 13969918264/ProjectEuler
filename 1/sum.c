@@ -25,14 +25,21 @@ int main(void)
 int * list(int * p, int n)
 {
 	int i = 1;
-	int * pt;
 
-	pt = p;
+	int count = 0;
 
 	for (i; i < n; i++)
 	{
 		if ((i % 3 == 0) || (i % 5) == 0)
-			*pt++ = i;
+			*(p + count++) = i;
+	}
+	*(p+count) = '\0';
+
+	for (count = 0;*(p + count) ! = '\0'; count++)
+	{
+		if (count != 0 && count % 10 == 0)
+			printf("\n");
+		printf("%.4d \t", *p);
 	}
 
 	return p;
@@ -43,7 +50,7 @@ int sum(int * p, int n)
 	int sum = 0;
 	int count = 0;
 
-	while (count <= n && (*p != 0 || *p != '\0'))
+	while (count <= n && *p != '\0')
 	{
 		sum += *(p + count);
 		count++;
