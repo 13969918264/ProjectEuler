@@ -45,6 +45,7 @@ int * list(int * p, int n)
 			printf("\n");
 		printf("%.4d \t", *p);
 	}
+	printf("\n");
 
 	return p;
 }
