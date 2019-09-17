@@ -43,7 +43,7 @@ int * list(int * p, int n)
 	{
 		if (count != 0 && count % 10 == 0)
 			printf("\n");
-		printf("%.4d \t", *p);
+		printf("%.4d \t", *(p + count));
 	}
 	printf("\n");
 
