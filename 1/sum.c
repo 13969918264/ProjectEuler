@@ -19,11 +19,8 @@ int sum(int *, int);
 int main(void)
 {
 	int arr[MAX_ARR];
-	int output = 0;
 
-	list(arr, MAX_VALUE);
-	output = sum(arr, MAX_ARR);
-	printf("The sum of the natural numbers below %d that are multiples of 3 or 5 is %d \n", MAX_VALUE, output);
+	printf("The sum of the natural numbers below %d that are multiples of 3 or 5 is %d \n", MAX_VALUE, sum(list(arr, MAX_VALUE), MAX_ARR));
 
 	return 0;
 }
