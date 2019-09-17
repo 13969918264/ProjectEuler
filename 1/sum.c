@@ -54,8 +54,11 @@ int sum(int * p, int n)
 	int sum = 0;
 	int count = 0;
 
-	while (count <= n && *p != '\0')
+	while ((count <= n) && (*p != '\0'))
 	{
+		if (count != 0 && count % 10 == 0)
+			printf("\n");
+		printf("%.4d \t", *(p + count));
 		sum += *(p + count);
 		count++;
 	}
