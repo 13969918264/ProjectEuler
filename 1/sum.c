@@ -15,7 +15,7 @@ int sum(int *, int);
 int main(void)
 {
 	int arr[MAX_ARR];
-	int sum = 0;
+
 	list(arr, MAX_VALUE);
 	printf("The sum of the natural numbers below %d that are multiples of 3 or 5 is %d \n", MAX_VALUE, sum(arr, MAX_ARR));
 
