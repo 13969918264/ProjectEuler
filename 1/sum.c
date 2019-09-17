@@ -54,7 +54,7 @@ int sum(int * p, int n)
 	int sum = 0;
 	int count = 0;
 
-	while ((count <= n) && (*p != '\0'))
+	while ((count <= n) && (*(p + count) != '\0'))
 	{
 		if (count != 0 && count % 10 == 0)
 			printf("\n");
@@ -62,6 +62,7 @@ int sum(int * p, int n)
 		sum += *(p + count);
 		count++;
 	}
+	printf("\n");
 
 	return sum;
 }
