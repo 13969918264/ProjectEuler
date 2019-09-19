@@ -37,8 +37,9 @@ int main(void)
 		exit(EXIT_FAILURE);
 	}
 */
-	for (*(p + count++) = 1, *(p + count++) = 2; *(p+count++) < MAX; count++)
+	for (*(p + count + ONE) = 1, *(p + count + TWO) = 2; *(p+count++) < MAX; count++)
 	{
+		putchar('o');
 		*(p + count) = *(p + count - ONE) + *(p + count - TWO);
 	}
 	putchar('o');
