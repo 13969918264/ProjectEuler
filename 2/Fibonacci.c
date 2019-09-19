@@ -20,7 +20,7 @@
 
 int main(void)
 {
-	int fiboncacci[MAX / FOUR];
+	int fiboncacci[MAX / (FOUR * CYCLE * CYCLE)];
 	int * p;
 	int count = 0;
 	int sum = 0;
@@ -37,7 +37,7 @@ int main(void)
 		exit(EXIT_FAILURE);
 	}
 */
-	for (*(p + count + ONE) = 1, *(p + count + TWO) = 2; *(p+count++) < MAX; count++)
+	for (*(p + count + ONE) = 1, *(p + count + TWO) = 2; *(p + count) < MAX; count++)
 	{
 		putchar('o');
 		*(p + count) = *(p + count - ONE) + *(p + count - TWO);
