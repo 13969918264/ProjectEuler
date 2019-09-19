@@ -10,18 +10,24 @@
 */
 /*	2_Fibonacci.c	*/
 #include <stdio.h>
-#include <stdlib.h>
+//	#include <stdlib.h>			//	malloc() 和 free()
 
 #define MAX 4000000
-
-int sum_even(int *);
-int * fibonacci(int, int);
+#define FOUR 4
+#define ONE 1
+#define TWO 2
+#define CYCLE 10
 
 int main(void)
 {
-	int before = 1;
-	int after = 2;
-	int amount = 0;
+	int fiboncacci[MAX / FOUR];
+	int * p;
+	int count = 0;
+	int sum = 0;
+
+	p  = fiboncacci;
+
+/*	int amount = 0;
 	int * ptd;
 
 	ptd = (int *)malloc(MAX * sizeof(int));
@@ -30,13 +36,22 @@ int main(void)
 		puts("Memory allocation failed. goodbye.");
 		exit(EXIT_FAILURE);
 	}
-
-	while (last < MAX)
+*/
+	for (*(p * count++) = 1, *(p + count++); *(p+count++) < MAX; count++)
 	{
-
+		*(p + count) = *(p + count - ONE) + *(p + count - TWO);
 	}
 
-	free(ptd);
+	for (count = 0; *(p + count) < MAX; count++)
+	{
+		if ((count != 0) && (count % CYCLE ==  0))
+			putchar('\n');
+		printf("%d\t", *(p + count));
+		if (*(p + count) % two == 0)
+			sum += *(p + count);
+	}
+	printf("sum of even of Fibonacci number is %d.\n", sum);
+//	free(ptd);
 
 	return 0;
 }
