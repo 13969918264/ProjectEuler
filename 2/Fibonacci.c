@@ -37,17 +37,17 @@ int main(void)
 		exit(EXIT_FAILURE);
 	}
 */
-	for (*(p * count++) = 1, *(p + count++); *(p+count++) < MAX; count++)
+	for (*(p + count++) = 1, *(p + count++) = 2; *(p+count++) < MAX; count++)
 	{
 		*(p + count) = *(p + count - ONE) + *(p + count - TWO);
 	}
-
+	putchar('o');
 	for (count = 0; *(p + count) < MAX; count++)
 	{
 		if ((count != 0) && (count % CYCLE ==  0))
 			putchar('\n');
 		printf("%d\t", *(p + count));
-		if (*(p + count) % two == 0)
+		if (*(p + count) % TWO == 0)
 			sum += *(p + count);
 	}
 	printf("sum of even of Fibonacci number is %d.\n", sum);
