@@ -11,11 +11,12 @@
 #define TARGET 600851475143
 #define MAX 10000
 
-int max_prime_factor(int);
+void max_prime_factor(int *);
+int * factors(int);
 
 int main(void)
 {
-	printf("The largest prime factor of %d is %d.\n", TARGET, max_prime_factor(TARGET));
+	printf("The largest prime factor of %d is %d.\n", TARGET, max_prime_factor(factors(TARGET)));
 
 	return 0;
 }
@@ -28,13 +29,14 @@ int max_prime_factor(int target)
 
 	while( n <= sqrt(target))
 	{
-		if (floor(sqrt(target)) == ceil(sqrt(target)))
+		if ((target % n) == 0)
 		{
-			factors[MAX] = sqrt(target);
-			max_prime_factor(factors[MAX]);
+			factors[count++] = target / n;
+			n++;
+			continue;
 		}
 
-		if ((target % n) == 0)
-			factors[count++] = target / n;
+		if (floor(sqrt(target)) == ceil(sqrt(target)))
+			factors[MAX] = sqrt(target);
 	}
 }
