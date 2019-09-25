@@ -44,14 +44,26 @@ int * factors(int target)
 		if (factors[MAX - 1] != 0)
 			factors[count++] = factors[MAX - 1];
 	}
+	factors[count] = 0;
 	p = sort(factors);
+
+	max_prime_facor(p);
 
 	return p;
 }
 
 int * sort(int * p)
 {
-
+	int i;
+	int count;
+	int val = 0;
+	for (i = 0; *(p + i) != 0; i++)
+		for (count = i; *(p + i) > * (p + count + 1); count++)
+		{
+			val = *(p + i);
+			*(p + i) = *(p + count + 1);
+			*(p + count + 1) = val;
+		}
 }
 
 void max_prime_factor(int * p)
