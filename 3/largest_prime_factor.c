@@ -1,72 +1,87 @@
 /*
+	赵子豪@20191202
+	largest_prime_factor.c			-- find the largest prime factor the a number
+*/
+/*
 	The prime factors of 13195 are 5, 7, 13 and 29.
 	What is the largest prime factor of the number 600851475143 ?
 */
-/*	赵子豪@2019年9月22日23日24日	*/
-/*	largest_prime_factor.c	*/
+/*	解决思路：找因子-->找素数因子-->排序	*/
 #include <stdio.h>
+#include <stdbool.h>
 #include <math.h>
 #include <stdlib.h>
 
-#define TARGET 600851475143
-#define MAX 10000
+#define MAX 4294967296			/*	2的64次方	*/
 
-void max_prime_factor(int *);
-int * factors(int);
-int * sort(int *);
+bool isprime(unsigned long);
+void factors(unsigned long, unsigned long *);
+void prime(unsigned long *,unsigned long *, unsigned long);
+void sort(unsigned long *,unsigned long);
+void swap(unsigned long, unsigned long);
+unsigned long max(unsigned long *);
+void s_print(unsigned long *, unsigned long);
 
 int main(void)
 {
-	printf("The largest prime factor of %d is %d.\n", TARGET, max_prime_factor(factors(TARGET)));
+	unsigned long input = 0;
+	unsigned long output = 0;
+	unsigned long arr_1[MAX];
+	unsigned long arr_2[MAX];
 
+	if (!isprime(input))			/*	数值本身为质数	*/
+	{
+		factors(input, arr_1);
+		s_print(arr_1, MAX);
+		prime(arr_1,arr_2,MAX);
+		s_print(arr_2, MAX);
+		sort(arr_1, MAX);
+		sort(arr_2, MAX);
+		output = max(arr_2, MAX);
+		printf("The largest prime factor of %ud id %ud\n", input, output);
+	}
+	else
+	{
+		printf("%d is a prime number.\n", input);
+	}
+		
 	return 0;
 }
 
-int * factors(int target)
+void factors(unsigned long val, unsigned long * p)
 {
-	int n = 1;
-	int count = 0;
-	int factors[MAX];
-	int * p;
+	int i = 0;
+	int k = 0;
 
-	factors[MAX - 1] = 0;
-	while( n <= sqrt(target))
+	sqrt(val) == floor(val) ? (i = sqrt(val)) : (i = floor(val));
+	for (k; k < i; k++)
 	{
-		if ((target % n) == 0)
+		if (k = 0)
 		{
-			factors[count++] = n;
-			factors[count++] = target / n;
-			n++;
-			continue;
+			*(p + k) = 1;
+			*(P + i + k) = val;
 		}
-		if ((factors[MAX - 1] == 0) && (floor(sqrt(target)) == ceil(sqrt(target)))
-			factors[MAX - 1] = sqrt(target);
-		if (factors[MAX - 1] != 0)
-			factors[count++] = factors[MAX - 1];
+		else
+		{
+			
+		}
+		 
 	}
-	factors[count] = 0;
-	p = sort(factors);
-
-	max_prime_facor(p);
-
-	return p;
 }
 
-int * sort(int * p)
+void prime(unsigned long * p1, unsigned long * p2, unsigned long n)
+{}
+
+void sort(unsigned long * p, unsigned long n)
 {
-	int i;
-	int count;
-	int val = 0;
-	for (i = 0; *(p + i) != 0; i++)
-		for (count = i; *(p + i) > * (p + count + 1); count++)
-		{
-			val = *(p + i);
-			*(p + i) = *(p + count + 1);
-			*(p + count + 1) = val;
-		}
+	swap();
 }
 
-void max_prime_factor(int * p)
-{
+void swap(unsigned long m, unsigned long n)
+{}
 
-}
+void s_print(unsigned long * m, unsigned long n)
+{}
+
+unsigned long max(unsigned long * p, unsigned long n)
+{}
