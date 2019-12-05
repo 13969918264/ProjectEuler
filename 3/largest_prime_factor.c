@@ -29,11 +29,11 @@ int main(void)
 	unsigned long arr_1[MAX];			//	所有因子
 	unsigned long arr_2[MAX];			//	所有质因子
 
-	if (!isprime(input))			/*	数值本身为质数	*/
+	if ( !isprime(input) )			/*	数值本身为质数	*/
 	{
 		factors(input, arr_1, MAX);
 		s_print(arr_1, MAX);
-		prime(arr_1,arr_2,MAX);
+		prime(arr_2,arr_1,MAX);
 		s_print(arr_2, MAX);
 		sort(arr_1, MAX);
 		sort(arr_2, MAX);
@@ -57,7 +57,7 @@ void factors(unsigned long val, unsigned long * p, unsigned long n)
 	for (i; i < n; i++)
 		*(p + i) = 0;
 
-	sqrt(val) == floor(val) ? (i = sqrt(val)) : (i = floor(val));
+	sqrt(val) == floor(val) ? ( i = sqrt(val) ) : (i = floor(val) );
 	
 	for (k, m; k < i; k++)
 	{
@@ -80,8 +80,22 @@ void factors(unsigned long val, unsigned long * p, unsigned long n)
 void prime(unsigned long * dest, unsigned long * source, unsigned long n)
 {
 	int i = 0;
+	unsigned long m;
 
-
+	for (i; i < n; i++)
+		*(dest + i) = 0;
+	
+	for (i = 0, m = 0; i < n; i++)
+	{
+		if ( (*(source + i) != 0) && (isprime( *(source + i) ) ) )
+		{
+			*(dest + m) = *(source + i);
+			m++;
+		}
+		else
+			continue;
+		
+	}
 }
 
 void sort(unsigned long * p, unsigned long n)
