@@ -14,12 +14,12 @@
 
 #define MAX 4294967296			/*	2的64次方	*/
 
-bool isprime(unsigned long);			//	判断是否为质数
+int isprime(unsigned long);			//	判断是否为质数
 void factors(unsigned long, unsigned long *, unsigned long);			//	找因子
 void prime(unsigned long *,unsigned long *, unsigned long);			//	找质数
 void sort(unsigned long *,unsigned long);			//	排序
 void swap(unsigned long, unsigned long);			//	交换
-unsigned long largest(unsigned long *);			//	最大值
+unsigned long largest(unsigned long * ,unsigned long );			//	最大值
 void s_print(unsigned long *, unsigned long);			//	打印数组
 
 int main(void)
@@ -100,14 +100,55 @@ void prime(unsigned long * dest, unsigned long * source, unsigned long n)
 
 void sort(unsigned long * p, unsigned long n)
 {
-	swap();
+	//从大到小
+	unsigned long i = 0;
+	unsigned long j = 0;
+
+	for (i; i< n; i++)
+		for (j = i+1; j < n; j++)
+			if (*(p + i) < *(p + j) )
+				swap(*(p+i), *(p+j) );
 }
 
 void swap(unsigned long m, unsigned long n)
-{}
+{
+	unsigned long i;
 
-void s_print(unsigned long * m, unsigned long n)
-{}
+	i = m;
+	m = n;
+	n = i;
+}
+
+void s_print(unsigned long * p, unsigned long n)
+{
+	unsigned long i;
+
+	for (i; i < n; i++)
+	{
+		printf("%ud", *(p+i));
+		if ( (i != 0) && (i % 10 == 0) )
+			printf("\n");
+		else if (i != 0)
+			printf("\t");
+	}		
+}
 
 unsigned long largest(unsigned long * p, unsigned long n)
-{}
+{
+	if ( (*p) > *(p + 1))
+		return *p;
+}
+
+int isprime(unsigned long n)
+{
+	unsigned long i = 2;
+	int flag = 0;
+
+	for (i; ((unsigned long)sqrt(n) == (unsigned long)floor(sqrt(n) ) ) && i <sqrt(n); i++ )
+		if ( (n % i) == 0)
+			break;
+		else
+			flag = 1;
+		
+	return flag;
+}
