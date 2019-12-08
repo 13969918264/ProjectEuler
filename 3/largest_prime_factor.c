@@ -15,19 +15,19 @@
 #define MAX 4294967296			/*	2的64次方	*/
 
 int isprime(unsigned long n);			//	判断是否为质数
-void factors(unsigned long m, unsigned long * p, unsigned long n );			//	找因子
-void prime( unsigned long * p2, unsigned long * p1, unsigned long n );			//	找质数
-void sort(unsigned long * p, unsigned long n );			//	排序
+void factors(unsigned long m, unsigned * p, unsigned long n );			//	找因子
+void prime( unsigned * p2, unsigned * p1, unsigned long n );			//	找质数
+void sort(unsigned * p, unsigned long n );			//	排序
 void swap( unsigned long m , unsigned long n );			//	交换
-unsigned long largest(unsigned long * m, unsigned long n );			//	最大值
-void s_print(unsigned long * p, unsigned long n);			//	打印数组
+unsigned long largest(unsigned * m, unsigned long n );			//	最大值
+void s_print(unsigned * p, unsigned long n);			//	打印数组
 
 int main(void)
 {
 	unsigned long input = 0;
 	unsigned long output = 0;
-	unsigned long arr_1[MAX];			//	所有因子
-	unsigned long arr_2[MAX];			//	所有质因子
+	unsigned arr_1[MAX];			//	所有因子
+	unsigned arr_2[MAX];			//	所有质因子
 
 	if ( !isprime(input) )			/*	数值本身为质数	*/
 	{
@@ -48,7 +48,7 @@ int main(void)
 	return 0;
 }
 
-void factors(unsigned long val, unsigned long * p, unsigned long n)
+void factors(unsigned long val, unsigned * p, unsigned long n)
 {
 	int i = 0;			//	控制循环次数
 	int k = 1;			//	遍历自然数
@@ -77,7 +77,7 @@ void factors(unsigned long val, unsigned long * p, unsigned long n)
 	}
 }
 
-void prime(unsigned long * dest, unsigned long * source, unsigned long n)
+void prime(unsigned * dest, unsigned * source, unsigned long n)
 {
 	int i = 0;
 	unsigned long m;
@@ -98,7 +98,7 @@ void prime(unsigned long * dest, unsigned long * source, unsigned long n)
 	}
 }
 
-void sort(unsigned long * p, unsigned long n)
+void sort(unsigned * p, unsigned long n)
 {
 	//从大到小
 	unsigned long i = 0;
@@ -119,7 +119,7 @@ void swap(unsigned long m, unsigned long n)
 	n = i;
 }
 
-void s_print(unsigned long * p, unsigned long n)
+void s_print(unsigned * p, unsigned long n)
 {
 	unsigned long i;
 
@@ -133,7 +133,7 @@ void s_print(unsigned long * p, unsigned long n)
 	}		
 }
 
-unsigned long largest(unsigned long * p, unsigned long n)
+unsigned long largest(unsigned * p, unsigned long n)
 {
 	if ( (*p) > *(p + 1))
 		return *p;
