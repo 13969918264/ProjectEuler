@@ -1,5 +1,5 @@
 /*
-	赵子豪@20191202-20191204
+	赵子豪@20191202-20191208
 	largest_prime_factor.c			-- find the largest prime factor the a number
 */
 /*
