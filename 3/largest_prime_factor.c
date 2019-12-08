@@ -12,7 +12,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-#define MAX 4294967296			/*	2的64次方	*/
+//#define MAX 4294967296			/*	2的64次方	*/
 
 int isprime(unsigned long n);			//	判断是否为质数
 void factors(unsigned long m, unsigned long * p, unsigned long n );			//	找因子
@@ -26,20 +26,20 @@ int main(void)
 {
 	unsigned long input = 0;
 	unsigned long output = 0;
-	unsigned long arr_1[MAX/32];			//	所有因子
-	unsigned long arr_2[MAX/32];			//	所有质因子
+	unsigned long arr_1[4294967296];			//	所有因子
+	unsigned long arr_2[4294967296];			//	所有质因子
 
 	printf("Enter a unsigned long number:\n");
 	scanf("%u\n", &input);
 	if ( !isprime(input) )			/*	数值本身为质数	*/
 	{
-		factors(input, arr_1, MAX);
-		s_print(arr_1, MAX);
-		prime(arr_2,arr_1,MAX);
-		s_print(arr_2, MAX);
-		sort(arr_1, MAX);
-		sort(arr_2, MAX);
-		output = largest(arr_2, MAX);
+		factors(input, arr_1, 4294967296);
+		s_print(arr_1, 4294967296);
+		prime(arr_2,arr_1,4294967296);
+		s_print(arr_2, 4294967296);
+		sort(arr_1, 4294967296);
+		sort(arr_2, 4294967296);
+		output = largest(arr_2, 4294967296);
 		printf("The largest prime factor of %ud id %ud\n", input, output);
 	}
 	else
