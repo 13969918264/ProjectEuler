@@ -33,13 +33,13 @@ int main(void)
 	scanf("%u\n", &input);
 	if ( !isprime(input) )			/*	数值本身为质数	*/
 	{
-		factors(input, arr_1, 4294967296);
-		s_print(arr_1, 4294967296);
-		prime(arr_2,arr_1,4294967296);
-		s_print(arr_2, 4294967296);
-		sort(arr_1, 4294967296);
-		sort(arr_2, 4294967296);
-		output = largest(arr_2, 4294967296);
+		factors(input, arr_1, 42949672);
+		s_print(arr_1, 42949672);
+		prime(arr_2,arr_1,42949672);
+		s_print(arr_2, 42949672);
+		sort(arr_1, 42949672);
+		sort(arr_2, 42949672);
+		output = largest(arr_2, 42949672);
 		printf("The largest prime factor of %ud id %ud\n", input, output);
 	}
 	else
