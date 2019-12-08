@@ -26,8 +26,8 @@ int main(void)
 {
 	unsigned long input = 0;
 	unsigned long output = 0;
-	unsigned long arr_1[4294967296];			//	所有因子
-	unsigned long arr_2[4294967296];			//	所有质因子
+	unsigned long arr_1[42949672];			//	所有因子
+	unsigned long arr_2[42949672];			//	所有质因子
 
 	printf("Enter a unsigned long number:\n");
 	scanf("%u\n", &input);
