@@ -14,13 +14,13 @@
 
 #define MAX 4294967296			/*	2的64次方	*/
 
-int isprime( (unsigned long) );			//	判断是否为质数
-void factors( (unsigned long) , (unsigned long) *, (unsigned long) );			//	找因子
-void prime( (unsigned long) *, (unsigned long) *, (unsigned long) );			//	找质数
-void sort( (unsigned long) *, (unsigned long) );			//	排序
-void swap( (unsigned long) , (unsigned long) );			//	交换
-unsigned long largest( (unsigned long) * , (unsigned long) );			//	最大值
-void s_print(unsigned long *, unsigned long);			//	打印数组
+int isprime(unsigned long n);			//	判断是否为质数
+void factors(unsigned long m, unsigned long * p, unsigned long n );			//	找因子
+void prime( unsigned long * p2, unsigned long * p1, unsigned long n );			//	找质数
+void sort(unsigned long * p, unsigned long n );			//	排序
+void swap( unsigned long m , unsigned long n );			//	交换
+unsigned long largest(unsigned long * m, unsigned long n );			//	最大值
+void s_print(unsigned long * p, unsigned long n);			//	打印数组
 
 int main(void)
 {
