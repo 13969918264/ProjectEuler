@@ -1,15 +1,17 @@
 /*
-	璧靛瓙璞狜20191202-20191208
+	赵子豪@20201007-20191202-20191208
 	largest_prime_factor.c			-- find the largest prime factor the a number
 */
 /*
 	The prime factors of 13195 are 5, 7, 13 and 29.
 	What is the largest prime factor of the number 600851475143 ?
 */
-/*	瑙ｅ喅鎬濊矾锛氫粠1寮�濮嬮櫎锛屾瘡涓粨鏋滃垽鏂槸鍚︿负璐ㄦ暟锛岀涓�涓垯涓烘渶澶ц川鍥犳暟	*/
+/*	求一个值的最大质因子	*/
 #include <stdio.h>
 int main(void)
 {
-	
+	long long value=600851475143;
+	printf("%lld",value);
+	getchar();
 	return 0;
 }
